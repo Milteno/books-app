@@ -1,0 +1,80 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.books-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  &__image {
+    display: inline-block;
+    margin: 10px 30px;
+    position: relative;
+    transition: .2s;
+
+    &::after {
+      content: "\f004";
+      font-family: "Font Awesome 5 Free";
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      position: absolute;
+      color: #c0392b;
+      font-weight: 900;
+      top: -20px;
+      right: -20px;
+      font-size: 40px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.2);
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 0.5;
+    }
+
+    &.favorite {
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      transform: scale(1.1);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.hidden {
+      opacity: 0.5;
+    }
+  }
+
+  &__rating {
+    width: 80%;
+    margin: 0 auto;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__fill {
+      width: 100%;
+    }
+  }
+
+}

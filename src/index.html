@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Books APP</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+
+      <!-- FILTERS FORM -->
+      <section class="filters">
+        <div>
+          <label>
+            Adults only: <input name="filter" value="adults" type="checkbox">
+          </label>
+          <label>
+            Non-fiction: <input name="filter" value="nonFiction" type="checkbox">
+          </label>
+        </div>
+      </section>
+
+      <!-- BOOKS PANEL -->
+      <section class="books-panel">
+        <h1>Your collection</h1>
+        <ul class="books-list">
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- BOOK TEMPLATE -->
+  <script id="template-book" type="text/x-handlebars-template">
+    <li class="book">
+
+      <!-- title and price -->
+      <header class="book__header">
+        <h2 class="book__name">{{ name }}</h2>
+        <p class="product__base-price no-spacing">${{ price }}</p>
+      </header>
+
+      <!-- cover image -->
+      <a href="#" class="book__image" data-id="{{ id }}">
+        <figure>
+          <img src="{{ image }}" alt="{{ name }}">
+        </figure>
+      </a>
+
+      <!-- ratings -->
+      <div class="book__rating">
+        <div class="book__rating__fill">
+          {{ rating }}/10
+        </div>
+      </div>
+
+
+    </li>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
